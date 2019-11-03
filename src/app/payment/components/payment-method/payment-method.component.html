@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Choose Your Payment Method:
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-spinner *ngIf="!payments || (payments && payments.length === 0)"></mat-spinner>
+    <ul class="list-payments" *ngIf="payments">
+      <li *ngFor="let payment of payments; let i = index" (click)="selectPayment(i, payment.id)"
+        [ngClass]="{actived: payment.selected}">
+        <span>
+          <img src="{{ payment.img_url }}" alt="">
+        </span>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,61 @@
+<mat-card>
+
+  <form novalidate [formGroup]="formData" (ngSubmit)="onSubmit()" class="form-container">
+    <mat-card-header>
+      <mat-card-title>Credit card</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <mat-form-field>
+        <input matInput placeholder="Amount" formControlName="amount">
+        <mat-error *ngIf="formData.controls['amount'].hasError('pattern')">
+          The amount name is number!
+        </mat-error>
+        <mat-error *ngIf="formData.controls['amount'].hasError('required')">
+          The amount is required!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Cardholder name" formControlName="cardHolderName">
+        <mat-error *ngIf="formData.controls['cardHolderName'].hasError('pattern')">
+          The cardholder name is number!
+        </mat-error>
+        <mat-error *ngIf="formData.controls['cardHolderName'].hasError('required')">
+          The cardHolderName is required!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="CVV" formControlName="cardNumber">
+        <mat-error *ngIf="formData.controls['cardNumber'].hasError('pattern')">
+          The cardNumber name is number!
+        </mat-error>
+        <mat-error *ngIf="formData.controls['cardNumber'].hasError('required')">
+          The cardNumber is required!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Exp date: mm/yy" formControlName="expDate">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="CVV" formControlName="cvvNumber">
+        <mat-error *ngIf="formData.controls['cvvNumber'].hasError('pattern')">
+          The CVV name is number!
+        </mat-error>
+        <mat-error *ngIf="formData.controls['cvvNumber'].hasError('required')">
+          The CVV is required!
+        </mat-error>
+      </mat-form-field>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Payment</button>
+    </mat-card-actions>
+  </form>
+
+</mat-card>

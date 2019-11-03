@@ -1,0 +1,9 @@
+<div class="snack-bar-container">
+  <em class="icon snack-bar-icon" [ngClass]="{
+        'km-smx-warning': data.type === 'error',
+        'ion-ios-checkmark-circle': data.type !== 'error',
+        'ion-md-warning': data.type === 'warning'
+      }"></em>
+  <span class="snack-bar-span-content" class="snack-bar-content" [innerHTML]="data.content"></span>
+  <em class="icon ion-md-close snack-bar-dismiss" (click)="dismiss()"></em>
+</div>

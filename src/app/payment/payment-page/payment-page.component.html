@@ -1,0 +1,6 @@
+<div class="container">
+  <app-country (countryChanged)="countryChanged($event)"></app-country>
+  <app-payment-method [payments]="payments$ | async" (selected)="paymentSelected($event)"></app-payment-method>
+  <app-payment-method-form (OnSubmit)="onPayment($event)"></app-payment-method-form>
+
+</div>

@@ -1,0 +1,63 @@
+$color-clear: transparent;
+$color-base: #000;
+$color-primary: #005aab;
+$color-success: #019843;
+$color-critical: #d71c32;
+$color-warning: #eec000;
+$color-support-blue: #00b8ee;
+
+.snack-bar-container {
+  display: table;
+  color: $color-base;
+  width: 100%;
+
+  .snack-bar-icon {
+    font-size: 30px;
+    display: table-cell;
+    &.km-smx-warning {
+      font-size: 25px;
+    }
+  }
+
+  .snack-bar-content {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 20px;
+  }
+
+  .snack-bar-dismiss {
+    font-size: 30px;
+    display: table-cell;
+    cursor: pointer;
+    text-align: right;
+  }
+}
+
+::ng-deep() .snack-bar-message {
+  padding: 4px 16px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+
+  &.information {
+    background-color: $color-support-blue;
+  }
+
+  &.success {
+    background-color: $color-success;
+  }
+
+  &.warning {
+    background-color: $color-warning;
+    ::ng-deep() .snack-bar-dismiss {
+      display: none !important;
+    }
+    ::ng-deep() .ion-md-warning {
+      font-size: 25px !important;
+    }
+  }
+
+  &.error {
+    background-color: $color-critical;
+  }
+}
